@@ -7,18 +7,34 @@ public class InitializrStatsProperties {
 
 	private final Generator generator = new Generator();
 
-	private long delay = 100;
+	/**
+	 * Minimum delay in ms between two requests.
+	 */
+	private int minDelay = 25;
+
+	/**
+	 * Minimum delay in ms between two requests.
+	 */
+	private int maxDelay = 200;
 
 	public Generator getGenerator() {
 		return this.generator;
 	}
 
-	public long getDelay() {
-		return this.delay;
+	public int getMinDelay() {
+		return this.minDelay;
 	}
 
-	public void setDelay(long delay) {
-		this.delay = delay;
+	public void setMinDelay(int minDelay) {
+		this.minDelay = minDelay;
+	}
+
+	public int getMaxDelay() {
+		return this.maxDelay;
+	}
+
+	public void setMaxDelay(int maxDelay) {
+		this.maxDelay = maxDelay;
 	}
 
 	public static class Generator {
